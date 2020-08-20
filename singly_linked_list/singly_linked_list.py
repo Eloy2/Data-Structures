@@ -64,6 +64,7 @@ class LinkedList:
             current_tail = self.tail
             self.head = None
             self.tail = None
+            self.length = self.length - 1
             return current_tail.value
         else:
             # General case:
@@ -78,4 +79,5 @@ class LinkedList:
             self.tail = current_node
             # Set current_node.next to None
             current_node.next = None
+            self.length = self.length - 1
             return current_tail.value

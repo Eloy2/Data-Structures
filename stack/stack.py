@@ -17,6 +17,8 @@ return elements in Last In First Out order.
    When using a Linked list the storage attribute is an instance of our Linked list class. We would then use the methods that our
    instance has to implement our Stack. A ran into a problem when trying to use my linked list length attribute. It was returning 1 even though 
    everything was poped out and there where no values in the linked list. So I implemented the length, adding, and subtracting here in the Stack class.
+
+   I have fixed the problem in the singly_linked_list file 
 """
 
 # Implemented with ARRAY
@@ -45,17 +47,17 @@ class Stack:
         self.storage = LinkedList()
 
     def __len__(self):
-        return self.size
+        return self.storage.length
 
     def push(self, value):
-        self.size = self.size + 1
+        # self.size = self.size + 1
         self.storage.add_to_tail(value)
 
     def pop(self):
-        if self.size == 0:
-            self.size = 0
-        else:
-            self.size = self.size - 1
+        # if self.size == 0:
+        #     self.size = 0
+        # else:
+        #     self.size = self.size - 1
         return self.storage.remove_tail()
 
 
